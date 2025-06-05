@@ -1,0 +1,140 @@
+/* Reset for full height layout and no horizontal scroll */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: sans-serif;
+    background-color: white;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Setup Container - allow vertical scroll when needed */
+.setup-container {
+    min-height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: calc(env(safe-area-inset-top, 1rem) + 1rem) calc(env(safe-area-inset-right, 1rem) + 1rem) calc(env(safe-area-inset-bottom, 1rem) + 1rem) calc(env(safe-area-inset-left, 1rem) + 1rem);
+
+    background-color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Form Layout */
+.setup-form {
+    width: 100%;
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Title & Labels */
+.title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.group-label {
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+/* Toggle Buttons */
+.toggle-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.75rem;
+    border: 2px solid #FFD700;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    min-width: 90px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.toggle-btn:hover {
+    background-color: #FFD700;
+}
+
+.toggle-btn.selected {
+    background-color: #FFD700;
+    color: black;
+    box-shadow: 0 0 8px #FFD700aa;
+    border-color: #FFD700;
+}
+
+/* Start Button */
+.start-button {
+    background-color: #FFD700;
+    color: black;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 1em;
+}
+
+.start-button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+
+.start-button:hover:not(:disabled) {
+    background-color: #FFD700;
+}
+
+/* Logo */
+.logo {
+    max-width: 30vmin;
+}
+
+/* Floating Rules Button */
+.rules-button {
+    all: unset;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.rules-button:hover {
+    all: unset;
+}

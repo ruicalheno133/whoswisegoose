@@ -1,0 +1,52 @@
+.stats-screen {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: black;
+}
+
+.overall-stats .used-percentage {
+    font-size: 1;
+}
+
+.category-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.category-box {
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+    min-width: 20vmin;
+    height: 20vmin;
+    font-size: 0.8rem;
+}
+
+.back-btn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    background-color: #4338ca;
+}
+
+.category-title {
+    font-family: "Luckiest Guy";
+}
+
+.used-percentage {
+    font-family: "Oswald";
+    font-weight: 300;
+}

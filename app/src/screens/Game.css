@@ -1,0 +1,216 @@
+/* Global box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent scrolling and enforce full viewport */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-family: sans-serif;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Game Container */
+.game-container {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: env(safe-area-inset-top, 1rem) env(safe-area-inset-right, 1rem) env(safe-area-inset-bottom, 1rem) env(safe-area-inset-left, 1rem);
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Header */
+.game-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    margin-bottom: 0;
+}
+
+.game-title {
+    font-weight: 500;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* Modal Rules Button */
+.rules-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    padding: 0.5rem;
+}
+
+/* Question Text */
+.question-text {
+    font-weight: 1000;
+    font-size: 1.8rem;
+    font-family: 'Sofia Sans', sans-serif;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+    max-width: 90vw;
+    color: black;
+    padding: 0 1rem;
+}
+
+/* Options Grid */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 36rem;
+    width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Option Buttons */
+.option-button {
+    border: 1px solid #FFD700;
+    border-radius: 0.75rem;
+    padding: 0.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    cursor: pointer;
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: #FFD700;
+}
+
+/* Disabled States */
+.option-disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Correct/Wrong Options */
+.option-correct {
+    background-color: #22c55e;
+    color: white;
+    cursor: default;
+    border-color: #22c55e;
+}
+
+.option-wrong {
+    background-color: #ef4444;
+    color: white;
+    cursor: default;
+    border-color: #ef4444;
+}
+
+.option-correct-unselected {
+    background-color: #22c55e;
+    color: white;
+    cursor: default;
+    border-color: #22c55e;
+}
+
+.option-grayed {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: default;
+    border-color: #d1d5db;
+    margin: 1em;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 36rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .buttons-container {
+        flex-direction: row;
+    }
+}
+
+/* Action Buttons */
+.action-button,
+.action-button:focus,
+.action-button:active {
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    flex-grow: 1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .action-button+.action-button {
+        margin-left: 1rem;
+    }
+}
+
+/* Individual Button Styles */
+.btn-skip,
+.btn-skip:focus,
+.btn-skip:active {
+    background-color: #50aebd;
+}
+
+.btn-skip:hover {
+    background-color: #a9dfe7;
+}
+
+.btn-remove,
+.btn-remove:focus,
+.btn-remove:active {
+    background-color: #388e3c;
+}
+
+.btn-remove:hover:not(:disabled) {
+    background-color: #5b8f5d;
+}
+
+.btn-remove:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.btn-leave,
+.btn-leave:focus,
+.btn-leave:active {
+    background-color: #ef4444;
+}
+
+.btn-leave:hover {
+    background-color: #dc2626;
+}

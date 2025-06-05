@@ -1,0 +1,392 @@
+[
+    {
+        "qid": "q1",
+        "question": "Who discovered penicillin?",
+        "options": [
+            "Alexander Fleming",
+            "Marie Curie",
+            "Albert Einstein",
+            "Charles Darwin"
+        ],
+        "answer": "Alexander Fleming",
+        "category": "Geography",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q2",
+        "question": "What is the main function of liver?",
+        "options": [
+            "Detoxifies chemicals",
+            "Gas exchange",
+            "Filters blood",
+            "Controls the body"
+        ],
+        "answer": "Detoxifies chemicals",
+        "category": "Pop Culture",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q3",
+        "question": "What is the capital of Brazil?",
+        "options": [
+            "Ottawa",
+            "Tokyo",
+            "Rome",
+            "Brasília"
+        ],
+        "answer": "Brasília",
+        "category": "Pop Culture",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q4",
+        "question": "Who discovered gravity?",
+        "options": [
+            "Isaac Newton",
+            "Benjamin Franklin",
+            "Alexander Fleming",
+            "Charles Darwin"
+        ],
+        "answer": "Isaac Newton",
+        "category": "History",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q5",
+        "question": "What is the main function of kidney?",
+        "options": [
+            "Filters blood",
+            "Controls the body",
+            "Gas exchange",
+            "Detoxifies chemicals"
+        ],
+        "answer": "Filters blood",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q6",
+        "question": "What is the capital of Italy?",
+        "options": [
+            "Rome",
+            "Brasília",
+            "Tokyo",
+            "Paris"
+        ],
+        "answer": "Rome",
+        "category": "Pop Culture",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q7",
+        "question": "Who discovered relativity?",
+        "options": [
+            "Albert Einstein",
+            "Isaac Newton",
+            "Alexander Fleming",
+            "Charles Darwin"
+        ],
+        "answer": "Albert Einstein",
+        "category": "Science",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q8",
+        "question": "What is the main function of lungs?",
+        "options": [
+            "Controls the body",
+            "Detoxifies chemicals",
+            "Gas exchange",
+            "Filters blood"
+        ],
+        "answer": "Gas exchange",
+        "category": "Geography",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q9",
+        "question": "What is the capital of France?",
+        "options": [
+            "Paris",
+            "Rome",
+            "Tokyo",
+            "Ottawa"
+        ],
+        "answer": "Paris",
+        "category": "History",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q10",
+        "question": "What is the main function of heart?",
+        "options": [
+            "Pumps blood",
+            "Filters blood",
+            "Detoxifies chemicals",
+            "Controls the body"
+        ],
+        "answer": "Pumps blood",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q11",
+        "question": "When did the moon landing happen?",
+        "options": [
+            "1969",
+            "1939",
+            "1776",
+            "1947"
+        ],
+        "answer": "1969",
+        "category": "History",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q12",
+        "question": "Which of the following is related to blockchain?",
+        "options": [
+            "Decentralization",
+            "Global Warming",
+            "Taylor Swift",
+            "Facebook"
+        ],
+        "answer": "Decentralization",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q13",
+        "question": "Who discovered evolution?",
+        "options": [
+            "Charles Darwin",
+            "Isaac Newton",
+            "Alexander Fleming",
+            "Marie Curie"
+        ],
+        "answer": "Charles Darwin",
+        "category": "History",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q14",
+        "question": "When did World War II happen?",
+        "options": [
+            "1939",
+            "1760",
+            "1492",
+            "1300"
+        ],
+        "answer": "1939",
+        "category": "Geography",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q15",
+        "question": "What is the capital of Canada?",
+        "options": [
+            "Ottawa",
+            "Paris",
+            "Brasília",
+            "Rome"
+        ],
+        "answer": "Ottawa",
+        "category": "Geography",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q16",
+        "question": "Which of the following is related to climate change?",
+        "options": [
+            "Global Warming",
+            "Taylor Swift",
+            "Facebook",
+            "Instagram"
+        ],
+        "answer": "Global Warming",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q17",
+        "question": "What is the capital of Japan?",
+        "options": [
+            "Tokyo",
+            "Ottawa",
+            "Rome",
+            "Paris"
+        ],
+        "answer": "Tokyo",
+        "category": "Geography",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q18",
+        "question": "When did the Industrial Revolution happen?",
+        "options": [
+            "1760",
+            "1300",
+            "1947",
+            "1939"
+        ],
+        "answer": "1760",
+        "category": "History",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q19",
+        "question": "Which of the following is related to pop music?",
+        "options": [
+            "Taylor Swift",
+            "Facebook",
+            "Instagram",
+            "Bitcoin"
+        ],
+        "answer": "Taylor Swift",
+        "category": "Pop Culture",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q20",
+        "question": "Who discovered electricity?",
+        "options": [
+            "Benjamin Franklin",
+            "Isaac Newton",
+            "Charles Darwin",
+            "Alexander Fleming"
+        ],
+        "answer": "Benjamin Franklin",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q21",
+        "question": "Which of the following is related to social media?",
+        "options": [
+            "Instagram",
+            "Uncertainty Principle",
+            "Decentralization",
+            "Bitcoin"
+        ],
+        "answer": "Instagram",
+        "category": "Pop Culture",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q22",
+        "question": "What is the main function of brain?",
+        "options": [
+            "Controls the body",
+            "Pumps blood",
+            "Detoxifies chemicals",
+            "Stores oxygen"
+        ],
+        "answer": "Controls the body",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q23",
+        "question": "When did the Cold War happen?",
+        "options": [
+            "1947",
+            "1939",
+            "1760",
+            "1492"
+        ],
+        "answer": "1947",
+        "category": "History",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q24",
+        "question": "Which of the following is related to quantum physics?",
+        "options": [
+            "Uncertainty Principle",
+            "Decentralization",
+            "Facebook",
+            "Taylor Swift"
+        ],
+        "answer": "Uncertainty Principle",
+        "category": "Science",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q25",
+        "question": "When did the Renaissance happen?",
+        "options": [
+            "1300",
+            "1492",
+            "1760",
+            "1947"
+        ],
+        "answer": "1300",
+        "category": "History",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q26",
+        "question": "Who discovered penicillin?",
+        "options": [
+            "Alexander Fleming",
+            "Albert Einstein",
+            "Benjamin Franklin",
+            "Isaac Newton"
+        ],
+        "answer": "Alexander Fleming",
+        "category": "Science",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q27",
+        "question": "Which of the following is related to blockchain?",
+        "options": [
+            "Decentralization",
+            "Facebook",
+            "Taylor Swift",
+            "Global Warming"
+        ],
+        "answer": "Decentralization",
+        "category": "Pop Culture",
+        "difficulty": "hard"
+    },
+    {
+        "qid": "q28",
+        "question": "What is the main function of liver?",
+        "options": [
+            "Detoxifies chemicals",
+            "Gas exchange",
+            "Controls the body",
+            "Filters blood"
+        ],
+        "answer": "Detoxifies chemicals",
+        "category": "Science",
+        "difficulty": "medium"
+    },
+    {
+        "qid": "q29",
+        "question": "What is the capital of Canada?",
+        "options": [
+            "Ottawa",
+            "Tokyo",
+            "Brasília",
+            "Rome"
+        ],
+        "answer": "Ottawa",
+        "category": "Geography",
+        "difficulty": "easy"
+    },
+    {
+        "qid": "q30",
+        "question": "Who discovered gravity?",
+        "options": [
+            "Isaac Newton",
+            "Charles Darwin",
+            "Albert Einstein",
+            "Marie Curie"
+        ],
+        "answer": "Isaac Newton",
+        "category": "Science",
+        "difficulty": "easy"
+    }
+]
