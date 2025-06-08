@@ -1,3 +1,13 @@
+/* Global */
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: sans-serif;
+  -webkit-overflow-scrolling: touch;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

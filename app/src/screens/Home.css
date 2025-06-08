@@ -135,6 +135,8 @@ body {
     padding: 0.5rem;
 }
 
-.rules-button:hover {
+.rules-button:hover,
+.rules-button:focus,
+.rules-button:active {
     all: unset;
 }

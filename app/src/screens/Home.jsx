@@ -61,7 +61,7 @@ export default function Home() {
     return (
         <div className="setup-container">
             <p onClick={() => setShowModal(true)} className="rules-button"> ❓ </p>
-            <img src='logo.png' className='logo' />
+            <img src='/whoswisegoose/logo.png' className='logo' />
 
             <div>
                 <h2 className="group-label">Choose 1 or more categories</h2>

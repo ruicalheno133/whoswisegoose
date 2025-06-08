@@ -91,10 +91,10 @@ export default function Game() {
 
     return (
         <div className="game-container">
-            <img src='logo.png' alt="logo" className='logo' />
+            <img src='/whoswisegoose/logo.png' alt="logo" className='logo' />
 
             <div className="game-header">
-                <p className="game-title">{currentQ.category} - {currentQ.difficulty}</p>
+                <p className="game-title">{currentQ.category} {'🥚'.repeat(Math.floor(currentQ.difficulty / 2) + 1)}</p>
             </div>
 
             <p className="question-text">{currentQ.question}</p>
