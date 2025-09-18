@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import questionsData from '../data/wwg_questions.json';
 import './Game.css';
@@ -25,6 +25,94 @@ export default function Game() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [answerState, setAnswerState] = useState(null);
 
+    // Timer state
+    const [timeRemaining, setTimeRemaining] = useState(0);
+    const [isTimerActive, setIsTimerActive] = useState(false);
+    const [isInitialDelay, setIsInitialDelay] = useState(true);
+    const [initialDelayTime, setInitialDelayTime] = useState(10);
+    const [showTimer, setShowTimer] = useState(true);
+    const timerRef = useRef(null);
+    const initialDelayRef = useRef(null);
+    const initialCountdownRef = useRef(null);
+
+    // Timer functions
+    const playTimerSound = () => {
+        // Create a simple beep sound using Web Audio API
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.5);
+    };
+
+    const startTimer = () => {
+        // Clear any existing timers
+        if (timerRef.current) clearInterval(timerRef.current);
+        if (initialDelayRef.current) clearTimeout(initialDelayRef.current);
+        if (initialCountdownRef.current) clearInterval(initialCountdownRef.current);
+
+        setIsInitialDelay(true);
+        setIsTimerActive(false);
+        setTimeRemaining(0);
+        setInitialDelayTime(10);
+
+        // Start initial delay countdown
+        initialCountdownRef.current = setInterval(() => {
+            setInitialDelayTime(prev => {
+                if (prev <= 1) {
+                    clearInterval(initialCountdownRef.current);
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
+
+        // Start 10-second initial delay
+        initialDelayRef.current = setTimeout(() => {
+            setIsInitialDelay(false);
+
+            // Generate random timer duration between 10-25 seconds
+            const randomDuration = Math.floor(Math.random() * 16) + 10; // 10-25 seconds
+            setTimeRemaining(randomDuration);
+            setIsTimerActive(true);
+
+            // Start countdown timer
+            timerRef.current = setInterval(() => {
+                setTimeRemaining(prev => {
+                    if (prev <= 1) {
+                        setIsTimerActive(false);
+                        playTimerSound();
+                        return 0;
+                    }
+                    return prev - 1;
+                });
+            }, 1000);
+        }, 10000); // 10 second initial delay
+    };
+
+    const resetTimer = () => {
+        if (timerRef.current) clearInterval(timerRef.current);
+        if (initialDelayRef.current) clearTimeout(initialDelayRef.current);
+        if (initialCountdownRef.current) clearInterval(initialCountdownRef.current);
+        startTimer();
+    };
+
+    const stopTimer = () => {
+        if (timerRef.current) clearInterval(timerRef.current);
+        if (initialDelayRef.current) clearTimeout(initialDelayRef.current);
+        if (initialCountdownRef.current) clearInterval(initialCountdownRef.current);
+        setIsTimerActive(false);
+        setIsInitialDelay(false);
+    };
+
     const nextQuestion = () => {
         let filtered = questionsData.filter(
             q =>
@@ -49,6 +137,9 @@ export default function Game() {
         setDisabledOptions([]);
         setSelectedOption(null);
         setAnswerState(null);
+
+        // Reset timer for new question
+        resetTimer();
     };
 
     const removeWrongOption = () => {
@@ -75,6 +166,9 @@ export default function Game() {
 
         setSelectedOption(idx);
 
+        // Stop timer when answer is selected
+        stopTimer();
+
         if (idx === currentQ.answer) {
             setAnswerState('correct');
         } else {
@@ -85,6 +179,15 @@ export default function Game() {
     useEffect(() => {
         nextQuestion();
         // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // Cleanup timers on unmount
+    useEffect(() => {
+        return () => {
+            if (timerRef.current) clearInterval(timerRef.current);
+            if (initialDelayRef.current) clearTimeout(initialDelayRef.current);
+            if (initialCountdownRef.current) clearInterval(initialCountdownRef.current);
+        };
     }, []);
 
     if (!currentQ) return null;
@@ -150,6 +253,35 @@ export default function Game() {
                 >
                     Leave
                 </button>
+            </div>
+
+            {/* Timer Toggle and Display */}
+            <div className="timer-section">
+                <button
+                    onClick={() => setShowTimer(!showTimer)}
+                    className="timer-toggle"
+                    title={showTimer ? "Hide timer" : "Show timer"}
+                >
+                    {showTimer ? "Hide timer ⏱️" : "Show timer ⏱️"}
+                </button>
+
+                {showTimer && (
+                    <div className="timer-container">
+                        {isInitialDelay ? (
+                            <div className="timer-text timer-initial">
+                                Reading time: {initialDelayTime}s
+                            </div>
+                        ) : isTimerActive ? (
+                            <div className="timer-text timer-active">
+                                ⏰ {timeRemaining}s
+                            </div>
+                        ) : (
+                            <div className="timer-text timer-inactive">
+                                Time's up! 🔔
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
         </div>
     );
